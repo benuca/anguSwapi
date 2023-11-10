@@ -1,0 +1,26 @@
+<app-loader *ngIf="!starshipData" />
+
+<div *ngIf="starshipData">
+  <kendo-card>
+    <kendo-card-header>
+      <h2>{{ starshipData.name }}</h2>
+    </kendo-card-header>
+    <kendo-card-body>
+      <p *ngIf="filmsAppearedIn.length > 0"><b>Appears In:</b></p>
+      <p *ngFor="let film of filmsAppearedIn">
+        {{ film.filmTitle }} by {{ film.filmDirector }}, released in
+        {{ film.filmReleaseYear }}
+      </p>
+      <p><b>Model:</b> {{ starshipData.model }}</p>
+      <p><b>Crew Size:</b> {{ starshipData.crew }}</p>
+      <p><b>Class:</b> {{ starshipData.starship_class }}</p>
+      <p><b>Manufacturer:</b> {{ starshipData.manufacturer }}</p>
+      <p><b>Price (credits):</b> {{ starshipData.cost_in_credits }}</p>
+      <p><b>Length:</b> {{ starshipData.length }}</p>
+      <p><b>Max Speed:</b> {{ starshipData.max_atmosphering_speed }}</p>
+      <p><b>Hyperdrive Rating:</b> {{ starshipData.hyperdrive_rating }}</p>
+      <p><b>Cargo Capacity:</b> {{ starshipData.cargo_capacity }}</p>
+      <p><b>Consumables Capacity:</b> {{ starshipData.consumables }}</p>
+    </kendo-card-body>
+  </kendo-card>
+</div>

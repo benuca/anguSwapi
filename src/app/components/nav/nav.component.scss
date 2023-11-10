@@ -1,0 +1,19 @@
+$selected-button-colour: #95bcf2;
+
+.navigation-buttons {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.navigation-buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: black;
+  box-shadow: 1px 1px 2px black;
+  border: 1px black solid;
+  cursor: pointer;
+}
+
+.k-selected {
+  background-color: $selected-button-colour;
+}

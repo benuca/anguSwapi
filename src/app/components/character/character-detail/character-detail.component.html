@@ -1,0 +1,22 @@
+<app-loader *ngIf="!characterData" />
+
+<div *ngIf="characterData">
+  <kendo-card>
+    <kendo-card-header>
+      <h2>{{ characterData.name }}</h2>
+    </kendo-card-header>
+    <kendo-card-body>
+      <p *ngIf="filmsAppearedIn.length > 0"><b>Appears In:</b></p>
+      <p *ngFor="let film of filmsAppearedIn">
+        {{ film.filmTitle }} by {{ film.filmDirector }}, released in
+        {{ film.filmReleaseYear }}
+      </p>
+      <p><b>Eye Color:</b> {{ characterData.eye_color }}</p>
+      <p><b>Hair Color:</b> {{ characterData.hair_color }}</p>
+      <p><b>Gender:</b> {{ characterData.gender }}</p>
+      <p><b>Height (cm):</b> {{ characterData.height }}</p>
+      <p><b>Mass (kg):</b> {{ characterData.mass }}</p>
+      <p><b>Skin Color:</b> {{ characterData.skin_color }}</p>
+    </kendo-card-body>
+  </kendo-card>
+</div>

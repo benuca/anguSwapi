@@ -1,0 +1,29 @@
+<app-loader *ngIf="firstFiveCharsYoungerThanForty.length !== 5" />
+
+<div class="container" *ngIf="firstFiveCharsYoungerThanForty.length === 5">
+  <kendo-grid
+    [style.width.px]="1000"
+    [sortable]="true"
+    [kendoGridBinding]="firstFiveCharsYoungerThanForty"
+    scrollable="none"
+    [selectable]="selectableSettings"
+    (selectionChange)="onSelectionChange($event)"
+  >
+    <kendo-grid-column field="name" title="Name"> </kendo-grid-column>
+    <kendo-grid-column field="age" title="Age"> </kendo-grid-column>
+    <kendo-grid-column field="height" title="Height"> </kendo-grid-column>
+    <kendo-grid-column field="mass" title="Mass"> </kendo-grid-column>
+    <kendo-grid-column field="hair_color" title="Hair Color">
+    </kendo-grid-column>
+  </kendo-grid>
+
+  <div class="card">
+    <kendo-card>
+      <kendo-card-header>
+        <b>5 Characters Younger than 40</b>
+      </kendo-card-header>
+      <kendo-card-body> </kendo-card-body>
+      <kendo-card-footer> <i>See all characters > </i> </kendo-card-footer>
+    </kendo-card>
+  </div>
+</div>

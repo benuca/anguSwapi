@@ -1,0 +1,24 @@
+<app-loader *ngIf="!planetData" />
+
+<div *ngIf="planetData">
+  <kendo-card>
+    <kendo-card-header>
+      <h2>{{ planetData.name }}</h2>
+    </kendo-card-header>
+    <kendo-card-body>
+      <p *ngIf="filmsAppearedIn.length > 0"><b>Appears In:</b></p>
+      <p *ngFor="let film of filmsAppearedIn">
+        {{ film.filmTitle }} by {{ film.filmDirector }}, released in
+        {{ film.filmReleaseYear }}
+      </p>
+      <p><b>Diameter:</b> {{ planetData.diameter }}</p>
+      <p><b>Rotation Period:</b> {{ planetData.rotation_period }}</p>
+      <p><b>Orbital Period:</b> {{ planetData.orbital_period }}</p>
+      <p><b>Gravity (in Gs):</b> {{ planetData.gravity }}</p>
+      <p><b>Population:</b> {{ planetData.population }}</p>
+      <p><b>Climate:</b> {{ planetData.climate }}</p>
+      <p><b>Terrain:</b> {{ planetData.terrain }}</p>
+      <p><b>Surface Water (%):</b> {{ planetData.surface_water }}</p>
+    </kendo-card-body>
+  </kendo-card>
+</div>

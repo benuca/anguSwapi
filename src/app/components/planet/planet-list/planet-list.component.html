@@ -1,0 +1,29 @@
+<app-loader *ngIf="fiveBiggestPlanets.length !== 5" />
+
+<div class="container" *ngIf="fiveBiggestPlanets.length === 5">
+  <kendo-grid
+    [style.width.px]="1000"
+    [kendoGridBinding]="fiveBiggestPlanets"
+    [sortable]="true"
+    [selectable]="selectableSettings"
+    (selectionChange)="onSelectionChange($event)"
+    scrollable="none"
+  >
+    <kendo-grid-column field="name" title="Name"> </kendo-grid-column>
+    <kendo-grid-column field="climate" title="Climate"> </kendo-grid-column>
+    <kendo-grid-column field="diameter" title="Diameter"> </kendo-grid-column>
+    <kendo-grid-column field="terrain" title="Terrain"> </kendo-grid-column>
+    <kendo-grid-column field="population" title="Population">
+    </kendo-grid-column>
+  </kendo-grid>
+
+  <div class="card">
+    <kendo-card>
+      <kendo-card-header>
+        <b>Top 5 Largest Planets</b>
+      </kendo-card-header>
+      <kendo-card-body> </kendo-card-body>
+      <kendo-card-footer> <i>See all planets > </i> </kendo-card-footer>
+    </kendo-card>
+  </div>
+</div>

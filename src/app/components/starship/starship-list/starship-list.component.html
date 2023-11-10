@@ -1,0 +1,30 @@
+<app-loader *ngIf="smallestCrewedStarships.length !== 5" />
+
+<div class="container" *ngIf="smallestCrewedStarships.length === 5">
+  <kendo-grid
+    [style.width.px]="1000"
+    [kendoGridBinding]="smallestCrewedStarships"
+    [sortable]="true"
+    [selectable]="selectableSettings"
+    (selectionChange)="onSelectionChange($event)"
+    scrollable="none"
+  >
+    <kendo-grid-column field="name" title="Name"> </kendo-grid-column>
+    <kendo-grid-column field="model" title="Model"> </kendo-grid-column>
+    <kendo-grid-column field="crew" title="Crew Size"> </kendo-grid-column>
+    <kendo-grid-column field="manufacturer" title="Manufacturer">
+    </kendo-grid-column>
+    <kendo-grid-column field="cost_in_credits" title="Price (Credits)">
+    </kendo-grid-column>
+  </kendo-grid>
+
+  <div class="card">
+    <kendo-card>
+      <kendo-card-header>
+        <b>5 Smallest Crewed Starships</b>
+      </kendo-card-header>
+      <kendo-card-body> </kendo-card-body>
+      <kendo-card-footer> <i>See all starships > </i> </kendo-card-footer>
+    </kendo-card>
+  </div>
+</div>
